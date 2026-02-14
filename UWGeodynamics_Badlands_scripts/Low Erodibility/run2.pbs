@@ -1,0 +1,28 @@
+#PBS -P q97
+#PBS -q normal
+#PBS -l walltime=48:00:00
+#PBS -l mem=128GB
+#PBS -l jobfs=100GB
+#PBS -l ncpus=48
+#PBS -l software=underworld
+#PBS -l wd
+#PBS -N Arc_collision_Bdls
+#PBS -l storage=gdata/m18
+
+
+
+MODELNAME="Arc-Collision_Bdls"
+OUTPUTPATH=`pwd`
+SCRIPT="test_equilibrium.py"
+
+
+export MODULEPATH=/g/data/m18/modulefiles:$MODULEPATH
+module load underworld/2.12
+
+
+# make blas serial
+export OPENBLAS_NUM_THREADS=1
+
+
+# execution
+mpiexec python3 ./$SCRIPT 1> $OUTPUTPATH/$MODELNAME.$PBS_JOBID.log 2> $OUTPUTPATH/$MODELNAME.$PBS_JOBID.err
