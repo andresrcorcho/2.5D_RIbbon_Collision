@@ -1,7 +1,5 @@
 # The role of slab-folding in modulating the landscape evolution of arc-continent collision
 
-[![DOI]()
-
 ## By: Andrés Felipe Rodríguez Corcho, Claire Mallard, Sara Polanco, Camilo Montes, Louis Moresi
 
 ## Abstract
